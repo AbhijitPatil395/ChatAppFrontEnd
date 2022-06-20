@@ -1,0 +1,9 @@
+<div class="container">
+    <div *ngIf="!isLoggedIn" class="row">
+         <pm-login [isLoggedIn]="isLoggedIn" (loginStatus)="changeLoginStatus($event)"></pm-login>
+    </div>
+    <div *ngIf="isLoggedIn" class="row">
+      <pm-userChat userName={{userName}}></pm-userChat>
+    </div>
+
+  </div>

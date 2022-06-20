@@ -1,0 +1,8 @@
+<div class="card text" style="width: 40rem;height: 21rem;overflow-y: auto;">
+ 
+  <div class="card-body">
+    <p [ngClass]="userName==m.username?'myMessage':'otherMessage'" *ngFor="let m of getGeneralChat()" class="card-text">
+      <!-- {{m.messageDate|date:'shortTime'}} : <b>{{m.userName}} </b>: {{m.messageBody}}</p> -->
+      {{m.datetime+'Z'|date:'MMMM d, h:mm'}} : <b>{{m.username}} </b>: {{m.messagetext}}</p>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+<div class="col-sm"><h1>Welcome {{userName}}</h1></div>
+<div class="col-sm">
+    <input #inp3 type="text"/>
+          <button class="btn btn-primary" type="button" (click)="addChannel(inp3.value,userName)" >Add Channel</button> 
+        
+</div></div>
+ </div>
+
+<div class="container">
+    <section style="background-color: #eee;">
+        <div class="container py-5">
+      
+          <div class="row">
+      
+            <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+      
+              <h3 class="font-weight-bold mb-3 text-center text-lg-start">{{getCurrentChannel()}}</h3>
+      
+              <div *ngFor=" let ch of arrChannel" class="card">
+                <div class="card-body">
+                      <!-- <button type="button" (click)="setChannel(ch.channelname)">{{ch.channelname}}</button>
+                      <button *ngIf="!getChannelService().isMember(userName,ch.channelname)" class="btn" type="button" (click)="joinChannel(ch.name)" >SUBSCRIBE</button>
+                      &nbsp;&nbsp;<button *ngIf="getChannelService().isLeavable(userName,ch.name)" type="button" (click)="leaveChannel(ch.name)" class="btn btn-danger btn-sm">Leave</button> -->
+                        <pm-channel-element [chName]="ch.channelname" [userName]="userName" (SetChannel)="setChannel($event)"></pm-channel-element>
+                
+                    </div>
+              </div>
+      
+            </div>
+      
+            <div class="col-md-6 col-lg-7 col-xl-8">
+                <div class="card">
+                <div class="card-body">
+                    <pm-channel #display [userName]="userName" [channelName]="chName"></pm-channel>
+                </div></div>
+                <br>
+                  <pm-send #send [flag]="!IsMember" [UserName]="userName" [channelName]="chName" (sendDetails)="changeSendDetails($event)"></pm-send>
+            </div>
+      
+          </div>
+      
+        </div>
+      </section>
+    </div>
+
+
+

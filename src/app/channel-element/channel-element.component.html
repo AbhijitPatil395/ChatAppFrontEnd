@@ -1,0 +1,3 @@
+<button type="button" (click)="setChannel(chName)">{{chName}}</button>
+<button *ngIf="!isMember" class="btn" type="button" (click)="joinChannel(chName)" >SUBSCRIBE</button>
+&nbsp;&nbsp;<button *ngIf="isLeveable()" type="button" (click)="leaveChannel(chName)" class="btn btn-danger btn-sm">Leave</button>

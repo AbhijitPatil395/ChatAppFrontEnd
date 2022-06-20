@@ -1,0 +1,10 @@
+.myMessage{
+    text-align: right;
+     background: rgb(235, 189, 133);
+     align-items: right;
+ }
+ .otherMessage{
+    text-align: left;
+     background: rgb(163, 237, 239);
+     align-items: right;
+ }
